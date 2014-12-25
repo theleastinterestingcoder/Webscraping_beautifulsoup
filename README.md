@@ -1,29 +1,32 @@
 Webscraping_beautifulsoup
 ==========
 
-How to scrape information from a single page using Beautiful Soup
+
+How to scrape information from a single page using Beautiful Soup (http://www.crummy.com/software/BeautifulSoup/).
+
+This tutorial will be scraping fun facts from snapple's webpage: http://www.snapple.com/real-facts/cap-view
 
 <h3> Introduction </h3>
 
-Beautiful soup (http://www.crummy.com/software/BeautifulSoup/) is a simple yet powerful tool to pull information from a single webpage. When it connects to a webpage, it uses string parsers to breakdown the hiearchy of the webpage into little pieces, and stores that in a special data structure (a soup) that holds all the information that you need. This tutorial will be scraping fun facts from snapple's webpage: http://www.snapple.com/real-facts/cap-view
+Beautiful soup  is a simple yet powerful tool that pulls information from a single webpage. When beautiful soup connects to a webpage, it uses string parsers to breakdown the hiearchy of the webpage into little pieces, and stores that in a special data structure that you can manipulate to find what you want. 
 
 Having some basic knowledge of HTML will be a useful, but not necessary, part of this tutorial. Also, the website is a little bit janky, but trust me, this tool is a commonly used tool to pull information from websites :). 
 
 <h3> Installation </h3>
 
-If you have pip (which I strongly recommend that you install for these tutorials), just type into your command line:
+If you have `pip` (which I strongly recommend that you install for these tutorials), just type into your command line:
 
 ```
 pip install beautifulsoup4
 ```
 
-If things break in the middle of your installation, don't panic! You might need to install some basic dependencies (such as xcode). 
+If things break in the middle of your installation, don't panic! You might need to install some basic dependencies (such as xcode). You can find more details about installation here: http://www.crummy.com/software/BeautifulSoup/#Download
 
 <h3> Scoping out the Data </h3>
 
 Using Chrome dev tools (right click in the page and choose the `Inspect Element` option), you can examine the HTML/CSS that renders the page:
 
-![Screenshot of Snapple's webpage](![alt tag](https://github.com/theleastinterestingcoder/Webscraping_beautifulsoup/blob/master/resources/snapple_webpage.png))
+![Screenshot of Snapple's webpage](https://github.com/theleastinterestingcoder/Webscraping_beautifulsoup/blob/master/resources/snapple_webpage.png)
 
 <h3> Getting Executing the script </h3>
 
@@ -73,26 +76,26 @@ More facts:
 <h3> Exploring and Understanding Beautiful Soup </h3>
 
 The best way to understand for beautiful soup is to use `ipython`. Here are some tips to keep in mind while you're trying things out:
-<ul>
-    <li> Within `ipython` use `type(my_variable)` what kind of data structure it is (string, int, BeautifulSoup, etc). </li>
-    <li> Within `ipython` use `dir(my_variable)` to see the functions associated with that data structure. </li>
-    <li> The length of iterator (`list`, `stack`, `ResultSet`, etc) can be determined with `len(my_list)`. </li>
-</ul>
+
+* [ Within `ipython` use `type(my_variable)` what kind of data structure it is (string, int, BeautifulSoup, etc). ]
+* [ Within `ipython` use `dir(my_variable)` to see the functions associated with that data structure. ]
+* [ The length of iterator (`list`, `stack`, `ResultSet`, etc) can be determined with `len(my_list)`. ]
+
    
 Beatiful soup is a _tool_ that converts (HTML as string) --> (Beautiful Soup Data structures). There's a whole familiy of beautiful soup structures that I won't get into, but the ones you'll see the most often are:
-<ul>
-    <li> *BeautifulSoup Class* which is the class that the the following two classes inherit </li>
-    <li> *Tag Class* which is a div/p/span/etc that is soup with contents inside (like strings or other div/p/spans/etc) that results. </li>
-    <li> *ResultSet* which is an interator of results (usually of the Tag Class) </li>
 
-</ul>>
+* [ *BeautifulSoup Class* which is the class that the the following two classes inherit ]
+* [ *Tag Class* which is a div/p/span/etc that is soup with contents inside (like strings or other div/p/spans/etc) that results. ]
+* [ *ResultSet* which is an interator of results (usually of the Tag Class) ]
+
+
 
 Finally, the following functions are your friends:
-<ul>
-    <li> `soup.find(<name>)` finds the first element that matches your criteria. Maps Soup --> Tag. Ex: `soup.find('div')` </li>
-    <li> `soup.findAll(<name>)` finds the all elements that matches your criteria and returns them as a ResultSet. Maps Soup --> ResultSet of Tag. </li>
-    <li> `tag.string` pulls the string from the tag. Maps ResultSet--> String. Protip: make sure you're in the right tag. The information you're looking for might be embedded one more layer down! </li> 
-</ul>
+
+* [ `soup.find(<name>)` finds the first element that matches your criteria. Maps Soup --> Tag. Ex: `soup.find('div')` ]
+* [ `soup.findAll(<name>)` finds the all elements that matches your criteria and returns them as a ResultSet. Maps Soup --> ResultSet of Tag. ]
+* [ `tag.string` pulls the string from the tag. Maps ResultSet--> String. Protip: make sure you're in the right tag. The information you're looking for might be embedded one more layer down! <]
+
 
 
 <h3> More information </h3>
