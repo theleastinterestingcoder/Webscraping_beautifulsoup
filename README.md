@@ -76,7 +76,7 @@ More facts:
     The first American gold rush happened in North Carolina, not California.
     More energy from the sun hits Earth every hour than the planet uses in a year.
 ```
-<h3> Check out the code <h3>
+<h3> Check out the code </h3>
 
 ```python
 '''
@@ -129,12 +129,12 @@ for fact in more_facts_strs:
 
 The best way to understand for beautiful soup is to use `ipython`. Here are some tips to keep in mind while you're trying things out:
 
-* Within `ipython` use the function `type()` to figure kind of data structure your variable is. Ex: `type(5) == int`
+* Within `ipython` use the function `type()` to figure kind of data structure your variable is. Example: `type(5) == int`
 * Within `ipython` use `dir()` to see the functions associated with that data structure. Example: One of the results of `dir("STRING")` is `lower()`. `"STRING".lower() == "string"`
-* The length of iterator (`list`, `stack`, `ResultSet`, etc) can be determined with `len([1 2 3]) == 3`. 
+* The length of an iterator such `list`, `stack`, `ResultSet`, etc can be determined with `len([1 2 3]) == 3`. 
 
    
-Beautiful soup is a _tool_ that converts `HTML as string` -> `Beautiful Soup Data structures`. There's a whole familiy of beautiful soup structures that I won't get into, but the ones you'll see the most often are:
+Beautiful soup is a *tool() that converts `HTML as string` -> `Beautiful Soup Data structures`. There's a whole familiy of beautiful soup structures that I won't get into, but the ones you'll see the most often are:
 
 * `BeautifulSoup Class` which is the class that the the following two classes inherit 
 * `Tag` Class which is a div/p/span/etc that is soup with contents inside (like strings or other div/p/spans/etc) that results. 
