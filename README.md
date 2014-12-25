@@ -4,6 +4,7 @@ Webscraping_beautifulsoup
 
 How to scrape information from a single page using Beautiful Soup (http://www.crummy.com/software/BeautifulSoup/).
 
+Estimated read time: *20 minutes*.
 
 <h3> Scoping out the Data </h3>
 
