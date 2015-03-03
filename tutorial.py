@@ -14,10 +14,13 @@ print "-"*10
 from bs4 import BeautifulSoup                           # Import to parse HTML structure
 import urllib2                                          # Library used to make connections to a webpage
 
-# (1) Connect to the webpage
-url  = 'http://www.snapple.com/real-facts/cap-view'     # Snapple facts (hopefully, this won't be broken)
-page = urllib2.urlopen(url).read()                      # Connect to webpage, and convert contents into string
-soup = BeautifulSoup(page)                       # String -> Soup (special data structure of information)
+# (0) some spoofing here to trick snapple
+headers = { 'User-Agent' : 'Mozilla/5.0' }              # Tell other people we're on Firefox
+url  = 'http://www.snapple.com/real-facts/cap-view'     
+req = urllib2.Request(url, None, headers)               # Create the request
+html = urllib2.urlopen(req).read()                      # Read the request, as a string
+soup = BeautifulSoup(html)                              # String -> Soup (special data structure of information)
+
 
 # (2) Quick aside: Here are some examples of things you might be interested in
 titleTag = soup.find("title").string                    #  The title of the page: u'Real Facts | Snapple'
