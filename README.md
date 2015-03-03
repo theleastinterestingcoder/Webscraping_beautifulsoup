@@ -152,7 +152,15 @@ Finally, the following functions are your friends:
 * `soup.findAll()` finds the all elements that matches your criteria and returns them as a ResultSet. Maps Soup -> ResultSet of Tag. 
 * `tag.string` pulls the string from the tag. Maps `ResultSet`-> String. Protip: make sure you're in the right tag. The information you're looking for might be embedded one more layer down! <
 
+<h3> Changing the Header</h3>
 
+Recently, it seems as though snapple is trying to deter people from mechanically scraping their websites. However, we can get around by changing the type of the request that we're making with:
+```
+headers = { 'User-Agent' : 'Mozilla/5.0' }              # Tell other people we're on Firefox
+url  = 'http://www.snapple.com/real-facts/cap-view'    
+req = urllib2.Request(url, None, headers)               # Create the request
+html = urllib2.urlopen(req).read()                      # Read the request, as a string
+```
 
 <h3> More information </h3>
 
